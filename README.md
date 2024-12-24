@@ -48,13 +48,6 @@ Restart and then log back into DC-1 as user: mydomain.com\labuser
 <img src="https://i.imgur.com/0YEKRSm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Part 1
-Install Active Directory
-—
-Login to DC-1 and install Active Directory Domain Services
-Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)
-Restart and then log back into DC-1 as user: mydomain.com\labuser
-
 Create a Domain Admin user within the domain
 —
 In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”
