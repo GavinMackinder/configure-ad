@@ -35,7 +35,12 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/Gb1Mqg8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Install Active Directory
+—
+Login to DC-1 and install Active Directory Domain Services
+Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)
+Restart and then log back into DC-1 as user: mydomain.com\labuser
+
 </p>
 <br />
 
@@ -75,6 +80,24 @@ Create a new OU named “_CLIENTS” and drag Client-1 into there
 <img src="https://i.imgur.com/7yVUQMU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Setup Remote Desktop for non-administrative users on Client-1
+—
+Log into Client-1 as mydomain.com\jane_admin
+Open system properties
+Click “Remote Desktop”
+Allow “domain users” access to remote desktop
+You can now log into Client-1 as a normal, non-administrative user now
+Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab)
+
+
+Create a bunch of additional users and attempt to log into client-1 with one of the users
+—
+Login to DC-1 as jane_admin
+Open PowerShell_ise as an administrator
+Create a new File and paste the contents of the script into it
+Run the script and observe the accounts being created
+When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
+attempt to log into Client-1 with one of the accounts
+
 </p>
 <br />
